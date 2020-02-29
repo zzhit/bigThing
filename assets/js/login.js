@@ -34,7 +34,7 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'http://www.liulongbin.top:3007/api/reguser',
+            url: '/api/reguser',
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
@@ -47,11 +47,11 @@ $(function () {
     });
 
     // 监听登录表单的提交事件
-    $('#form-login').on('click', function (e) {
+    $('#form-login').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'http://www.liulongbin.top:3007/api/login',
+            url: '/api/login',
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
